@@ -1,7 +1,7 @@
 #ifndef __DEMO_ECHO_SERVER_H
 #define __DEMO_ECHO_SERVER_H
 
-#include <dbus-c++/dbus.h>
+#include <dbusmm/dbus.h>
 #include "echo-server-glue.h"
 
 class EchoServer

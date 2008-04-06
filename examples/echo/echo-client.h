@@ -1,7 +1,7 @@
 #ifndef __DEMO_ECHO_CLIENT_H
 #define __DEMO_ECHO_CLIENT_H
 
-#include <dbus-c++/dbus.h>
+#include <dbusmm/dbus.h>
 #include "echo-client-glue.h"
 
 class EchoClient

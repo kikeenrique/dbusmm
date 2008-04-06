@@ -1,6 +1,5 @@
 #include "dbus-browser.h"
 
-#include <xml.h>
 #include <iostream>
 
 using namespace std;

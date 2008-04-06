@@ -1,7 +1,7 @@
 #ifndef __DEMO_PROPS_SERVER_H
 #define __DEMO_PROPS_SERVER_H
 
-#include <dbus-c++/dbus.h>
+#include <dbusmm/dbus.h>
 #include "props-glue.h"
 
 class PropsServer

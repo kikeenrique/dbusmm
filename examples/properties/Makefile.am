@@ -5,10 +5,10 @@ AM_CPPFLAGS = -I$(top_srcdir)/include
 noinst_PROGRAMS = props-server
 
 props_server_SOURCES = props-glue.h props-server.h props-server.cpp
-props_server_LDADD = $(top_builddir)/src/libdbus-c++-1.la
+props_server_LDADD = $(top_builddir)/src/libdbusmm-1.0.la
 
 props-glue.h: props-introspect.xml
-	$(top_builddir)/tools/dbusxx-xml2cpp $^ --adaptor=$@
+	$(top_builddir)/tools/dbusmm-xml2cpp $^ --adaptor=$@
 
 BUILT_SOURCES = props-glue.h
 CLEANFILES = $(BUILT_SOURCES)

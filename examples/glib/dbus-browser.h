@@ -1,10 +1,11 @@
 #ifndef __DEMO_DBUS_BROWSER_H
 #define __DEMO_DBUS_BROWSER_H
 
-#include <dbus-c++/dbus.h>
-#include <dbus-c++/glib-integration.h>
+#include <dbusmm/dbus.h>
+#include <dbusmm/glib-integration.h>
 #include <gtkmm.h>
 
+#include "xml.h"
 #include "dbus-glue.h"
 
 class DBusInspector

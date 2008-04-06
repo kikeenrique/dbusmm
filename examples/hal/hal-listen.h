@@ -1,9 +1,10 @@
 #ifndef __DEMO_HAL_LISTEN_H
 #define __DEMO_HAL_LISTEN_H
 
-#include <dbus-c++/dbus.h>
+#include <dbusmm/dbus.h>
 #include <vector>
 #include <map>
+#include <iostream>
 
 class HalDeviceProxy;
 
@@ -15,7 +16,8 @@ public:
 
 	HalManagerProxy( DBus::Connection& connection );
 
-	std::vector< DBus::String > GetAllDevices();
+	std::vector< DBus::String > GetAllDevices ();
+	std::map< DBus::String, DBus::Variant > GetAllProterties (DBus::RefPtr<HalDeviceProxy>);
 
 private:
 
@@ -23,7 +25,7 @@ private:
 
 	void DeviceRemovedCb( const DBus::SignalMessage& sig );
 
-	std::map< DBus::String, DBus::RefPtr< HalDeviceProxy > > _devices;
+	std::map< DBus::String, DBus::RefPtr<HalDeviceProxy> > _devices;
 };
 
 class HalDeviceProxy
