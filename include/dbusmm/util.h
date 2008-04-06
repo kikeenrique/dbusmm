@@ -26,7 +26,7 @@
 #define __DBUSXX_UTIL_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
 #include "api.h"

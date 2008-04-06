@@ -22,16 +22,17 @@
  */
 
 
-#ifndef __DBUSXX_DBUSXX_H
-#define __DBUSXX_DBUSXX_H
+#ifndef __DBUSXX_DBUS_H
+#define __DBUSXX_DBUS_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
 #include "types.h"
 #include "interface.h"
 #include "object.h"
+#include "property.h"
 #include "connection.h"
 #include "server.h"
 #include "error.h"
@@ -45,4 +46,4 @@
 #include "eventloop-integration.h"
 #include "introspection.h"
 
-#endif//__DBUSXX_DBUSXX_H
+#endif//__DBUSXX_DBUS_H

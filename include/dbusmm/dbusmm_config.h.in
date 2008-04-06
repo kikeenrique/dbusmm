@@ -1,4 +1,4 @@
-/* include/dbus-c++/config.h.in.  Generated from configure.ac by autoheader.  */
+/* include/dbusmm/dbusmm_config.h.in.  Generated from configure.ac by autoheader.  */
 
 /* unstable DBus */
 #undef DBUS_API_SUBJECT_TO_CHANGE

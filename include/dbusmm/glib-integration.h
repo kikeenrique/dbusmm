@@ -22,17 +22,18 @@
  */
 
 
-#ifndef __DBUSXX_GLIB_INTEGRATION_H
-#define __DBUSXX_GLIB_INTEGRATION_H
+#ifndef __DBUSMM_GLIB_INTEGRATION_H
+#define __DBUSMM_GLIB_INTEGRATION_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
 #include <glib.h>
 
 #include "api.h"
 #include "eventloop.h"
+#include "dispatcher.h"
 
 namespace DBus {
 
@@ -116,4 +117,4 @@ private:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_GLIB_INTEGRATION_H
+#endif//__DBUSMM_GLIB_INTEGRATION_H
