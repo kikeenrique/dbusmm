@@ -26,10 +26,10 @@
 #define __DBUSXX_DISPATCHER_P_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
-#include <dbus-c++/dispatcher.h>
+#include <dbusmm/dispatcher.h>
 
 #include <dbus/dbus.h>
 

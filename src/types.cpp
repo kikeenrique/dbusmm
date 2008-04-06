@@ -22,10 +22,11 @@
  */
 
 
-#include <dbus-c++/types.h>
-#include <dbus-c++/object.h>
+#include <dbusmm/types.h>
+#include <dbusmm/object.h>
 #include <dbus/dbus.h>
 #include <stdarg.h>
+#include <iostream>
 
 #include "message_p.h"
 #include "internalerror.h"
@@ -100,3 +101,14 @@ MessageIter& operator >> ( MessageIter& iter, Variant& val )
 	return ++iter;
 }
 
+std::istream& operator >> ( std::istream& is, Variant& val )
+{
+	std::cout << "istream " << std::endl;
+	return is;
+}
+
+std::ostream& operator >> ( std::ostream& os, Variant& val )
+{
+	std::cout << "ostream " << std::endl;
+	return os;
+}

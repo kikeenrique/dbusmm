@@ -22,7 +22,7 @@
  */
 
 
-#include <dbus-c++/glib-integration.h>
+#include <dbusmm/glib-integration.h>
 
 #include <dbus/dbus.h> // for DBUS_WATCH_*
 

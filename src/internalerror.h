@@ -26,10 +26,10 @@
 #define __DBUSXX_INTERNALERROR_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
-#include <dbus-c++/error.h>
+#include <dbusmm/error.h>
 
 #include <dbus/dbus.h>
 

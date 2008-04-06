@@ -26,13 +26,13 @@
 #define __DBUSXX_CONNECTION_P_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
-#include <dbus-c++/connection.h>
-#include <dbus-c++/server.h>
-#include <dbus-c++/dispatcher.h>
-#include <dbus-c++/refptr_impl.h>
+#include <dbusmm/connection.h>
+#include <dbusmm/server.h>
+#include <dbusmm/dispatcher.h>
+#include <dbusmm/refptr_impl.h>
 
 #include <dbus/dbus.h>
 

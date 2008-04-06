@@ -22,7 +22,7 @@
  */
 
 
-#include <dbus-c++/dispatcher.h>
+#include <dbusmm/dispatcher.h>
 
 #include <dbus/dbus.h>
 

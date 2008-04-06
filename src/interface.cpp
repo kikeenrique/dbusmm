@@ -22,8 +22,8 @@
  */
 
 
-#include <dbus-c++/debug.h>
-#include <dbus-c++/interface.h>
+#include <dbusmm/debug.h>
+#include <dbusmm/interface.h>
 
 #include "internalerror.h"
 

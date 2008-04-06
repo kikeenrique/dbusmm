@@ -22,8 +22,8 @@
  */
 
 
-#include <dbus-c++/message.h>
-#include <dbus-c++/error.h>
+#include <dbusmm/message.h>
+#include <dbusmm/error.h>
 
 #include <dbus/dbus.h>
 

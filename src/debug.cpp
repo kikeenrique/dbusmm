@@ -22,7 +22,7 @@
  */
 
 
-#include <dbus-c++/debug.h>
+#include <dbusmm/debug.h>
 
 #include <stdarg.h>
 #include <cstdio>

@@ -22,8 +22,8 @@
  */
 
 
-#include <dbus-c++/debug.h>
-#include <dbus-c++/server.h>
+#include <dbusmm/debug.h>
+#include <dbusmm/server.h>
 
 #include "internalerror.h"
 #include "server_p.h"

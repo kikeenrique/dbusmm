@@ -22,8 +22,8 @@
  */
 
 
-#include <dbus-c++/eventloop-integration.h>
-#include <dbus-c++/debug.h>
+#include <dbusmm/eventloop-integration.h>
+#include <dbusmm/debug.h>
 
 #include <sys/poll.h>
 

@@ -22,8 +22,8 @@
  */
 
 
-#include <dbus-c++/debug.h>
-#include <dbus-c++/connection.h>
+#include <dbusmm/debug.h>
+#include <dbusmm/connection.h>
 
 #include <dbus/dbus.h>
 #include <string>

@@ -22,7 +22,7 @@
  */
 
 
-#include <dbus-c++/message.h>
+#include <dbusmm/message.h>
 
 #include <dbus/dbus.h>
 

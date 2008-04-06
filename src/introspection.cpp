@@ -22,9 +22,9 @@
  */
 
 
-#include <dbus-c++/introspection.h>
-#include <dbus-c++/object.h>
-#include <dbus-c++/message.h>
+#include <dbusmm/introspection.h>
+#include <dbusmm/object.h>
+#include <dbusmm/message.h>
 
 #include <dbus/dbus.h>
 

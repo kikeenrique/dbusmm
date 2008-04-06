@@ -22,8 +22,8 @@
  */
 
 
-#include <dbus-c++/debug.h>
-#include <dbus-c++/object.h>
+#include <dbusmm/debug.h>
+#include <dbusmm/object.h>
 #include "internalerror.h"
 
 #include <map>

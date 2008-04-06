@@ -21,10 +21,10 @@
  *
  */
 
-#include <dbus-c++/debug.h>
-#include <dbus-c++/property.h>
+#include <dbusmm/debug.h>
+#include <dbusmm/property.h>
 
-#include <dbus-c++/introspection.h>
+#include <dbusmm/introspection.h>
 
 using namespace DBus;
 

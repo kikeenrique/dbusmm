@@ -22,7 +22,7 @@
  */
 
 
-#include <dbus-c++/pendingcall.h>
+#include <dbusmm/pendingcall.h>
 
 #include <dbus/dbus.h>
 
