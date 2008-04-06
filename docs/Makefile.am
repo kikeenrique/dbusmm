@@ -1,15 +1,12 @@
-if DBUS_DOXYGEN_DOCS_ENABLED
+SUBDIRS = reference
 
-EXTRA_DIST = Doxyfile.in
+doc-clean-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) doc-clean); \
+	done
 
-noinst_PROGRAMS = index.html
+doc-clean: doc-clean-recursive
 
-index_html_SOURCES = Doxyfile
+doc-rebuild: doc-clean all
 
-index.html: Doxyfile
-	doxygen Doxyfile
-
-endif
-
-MAINTAINERCLEANFILES = \
-	Makefile.in
+.PHONY: doc-clean doc-clean-recursive doc-rebuild
