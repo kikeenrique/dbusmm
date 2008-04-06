@@ -42,7 +42,6 @@
 #include "util.h"
 #include "dispatcher.h"
 #include "eventloop.h"
-#include "xml.h"
 #include "introspection.h"
 
 #endif//__DBUSXX_DBUSXX_H
