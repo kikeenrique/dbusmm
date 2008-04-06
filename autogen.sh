@@ -12,7 +12,8 @@ function autocmd()
 autocmd libtoolize --force --copy
 autocmd aclocal
 autocmd autoheader
-autocmd automake --add-missing --force-missing --copy -Wall
+# -Wportability skips non-POSIX variable name
+autocmd automake --add-missing --force-missing --gnu --copy --warnings=all
 autocmd autoconf
 
 echo "Autogen done, now you can ./configure"
