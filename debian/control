@@ -1,0 +1,66 @@
+Source: dbusmm
+Priority: optional
+Maintainer: Enrique Garcia <kike+deb@eldemonionegro.com>
+Section: libs
+Build-Depends: debhelper (>= 6),
+	       cdbs,
+	       libdbus-1-dev (>= 1.1.20),
+	       libglib2.0-dev (>= 2.12.0),
+	       libgtkmm-2.4-dev (>= 2.12.0),
+	       libexpat1-dev,
+	       doxygen
+Standards-Version: 3.7.3
+
+Package: libdbusmm-1.0-dev
+Section: libdevel
+Architecture: any
+Depends: libdbusmm-1.0-1 (= ${binary:Version}),
+	 libdbus-1-dev (>= 1.1.20)
+Suggests: libdbusmm-1.0-doc
+Description: C++ wrappers for D-Bus (development files)
+ dbusmm provides C++ bindings for the D-Bus.
+ D-Bus is a message bus system, a simple way for
+ applications to talk to one another.
+ .
+ Paolo Durante wrote a pure C++ binding while working on
+ the OpenWengo softphone.
+ The most recent version is available on freedesktop.org
+ via Git, just do
+ git clone git://anongit.freedesktop.org/git/dbus/dbus-c++
+ .
+ This package contains development files and examples.
+
+Package: libdbusmm-1.0-1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: C++ wrappers for D-Bus (shared libraries)
+ dbusmm provides C++ bindings for the D-Bus. 
+ D-Bus is a message bus system, a simple way for 
+ applications to talk to one another. 
+ .
+ Paolo Durante wrote a pure C++ binding while working on 
+ the OpenWengo softphone.
+ The most recent version is available on freedesktop.org 
+ via Git, just do
+ git clone git://anongit.freedesktop.org/git/dbus/dbus-c++
+ .
+ This package contains shared libraries.
+
+Package: libdbusmm-1.0-doc
+Section: doc
+Architecture: all
+Recommends: dbus-1-doc
+Suggests: www-browser
+Description: C++ wrappers for D-Bus (documentation)
+ dbusmm provides C++ bindings for the D-Bus. 
+ D-Bus is a message bus system, a simple way for 
+ applications to talk to one another. 
+ .
+ Paolo Durante wrote a pure C++ binding while working on 
+ the OpenWengo softphone.
+ The most recent version is available on freedesktop.org 
+ via Git, just do
+ git clone git://anongit.freedesktop.org/git/dbus/dbus-c++
+ . 
+ This package contains the HTML reference documentation.

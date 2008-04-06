@@ -1,0 +1,10 @@
+Document: libdbusmm-1.0-doc
+Title: dbusmm Reference Manual
+Author: Paolo Durante
+Abstract: Reference Manual for dbusmm, a C++ wrapper for the
+ DBus library.
+Section: Apps/Programming
+
+Format: HTML
+Index: /usr/share/doc/libdbusmm-1.0-doc/reference/html/index.html
+Files: /usr/share/doc/libdbusmm-1.0-doc/reference/html/*.html  

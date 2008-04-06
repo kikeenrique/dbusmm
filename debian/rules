@@ -1,0 +1,35 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+include /usr/share/cdbs/1/class/autotools.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+
+
+#HARED_PKG := $(shell sed -rn 's/Package:[[:space:]]*(libdbusmm-[0-9\.]+)[[:space:]]*$$/\1/p' debian/control | head -n 1)
+#OC_PKG := $(shell sed -rn 's/Package:[[:space:]]*(libdbusmm-[0-9\.]+-doc)[[:space:]]*$$/\1/p' debian/control | head -n 1)
+#HVER := 1:0.5.0
+
+#DFLAGS += -Wl,-z,defs -Wl,-O1 -Wl,--as-needed
+
+DEB_CONFIGURE_EXTRA_FLAGS += \
+	--enable-glib \
+	--enable-doxygen-docs
+
+DEB_DH_ALWAYS_EXCLUDE := .svn # .svn since 0.5.0, kept as reminder
+#EB_DH_INSTALL_SOURCEDIR := debian/tmp
+#EB_DH_MAKESHLIBS_ARGS_$(SHARED_PKG) += -V"$(SHARED_PKG) (>= $(SHVER))"
+#EB_INSTALL_EXAMPLES_$(DOC_PKG) += -XMakefile -X.deps -X.libs -X.o
+
+# chrpath hack to get rid of amd64 rpath
+#ommon-install-impl::
+#	chrpath -d $(DEB_DH_INSTALL_SOURCEDIR)/usr/lib/*.so*
+
+
+clean::
+	rm -rf docs/reference/html \
+	docs/reference/dbusmm_doxygen_tags \
+	docs/reference/doxygen* \
+	docs/reference/undocumented.txt
