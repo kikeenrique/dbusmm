@@ -22,8 +22,9 @@
  */
 
 
-#include <dbus-c++/xml.h>
-#include <dbus-c++/debug.h>
+#include "xml.h"
+
+#include <dbusmm/debug.h>
 
 #include <expat.h>
 

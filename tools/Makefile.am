@@ -8,18 +8,18 @@ AM_CPPFLAGS = \
 	-I$(top_srcdir)/include
 
 if CROSS_COMPILING
-libdbus_cxx_la = $(BUILD_LIBDBUS_CXX_DIR)/src/libdbus-c++-1.la
+        libdbusmm_1_0_la = $(BUILD_LIBDBUSMM_DIR)/src/libdbusmm-1.0.la
 else
-libdbus_cxx_la = $(top_builddir)/src/libdbus-c++-1.la
+        libdbusmm_1_0_la = $(top_builddir)/src/libdbusmm-1.0.la
 endif
 
-bin_PROGRAMS = dbusxx-xml2cpp dbusxx-introspect
+bin_PROGRAMS = dbusmm-xml2cpp dbusmm-introspect
 
-dbusxx_xml2cpp_SOURCES = xml.h xml.cpp xml2cpp.h xml2cpp.cpp
-dbusxx_xml2cpp_LDADD = $(libdbus_cxx_la) $(xml_LIBS)
+dbusmm_xml2cpp_SOURCES = xml.h xml.cpp xml2cpp.h xml2cpp.cpp
+dbusmm_xml2cpp_LDADD = $(libdbusmm_1_0_la) $(xml_LIBS)
 
-dbusxx_introspect_SOURCES = introspect.h introspect.cpp
-dbusxx_introspect_LDADD = $(libdbus_cxx_la)
+dbusmm_introspect_SOURCES = introspect.h introspect.cpp
+dbusmm_introspect_LDADD = $(libdbusmm_1_0_la)
 
 MAINTAINERCLEANFILES = \
 	Makefile.in

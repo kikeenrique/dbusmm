@@ -22,16 +22,16 @@
  */
 
 
-#ifndef __DBUSXX_TOOLS_XML2CPP_H
-#define __DBUSXX_TOOLS_XML2CPP_H
+#ifndef __DBUSMM_TOOLS_XML2CPP_H
+#define __DBUSMM_TOOLS_XML2CPP_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
-#include <dbus-c++/dbus.h>
+#include <dbusmm/dbus.h>
 #include <dbus/dbus.h>
 
 #include "xml.h"
 
-#endif//__DBUSXX_TOOLS_XML2CPP_H
+#endif//__DBUSMM_TOOLS_XML2CPP_H

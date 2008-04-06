@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_XML_H
-#define __DBUSXX_XML_H
+#ifndef __DBUSMM_XML_H
+#define __DBUSMM_XML_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
 #include <exception>
@@ -139,4 +139,4 @@ private:
 std::istream& operator >> ( std::istream&, DBus::Xml::Document& );
 std::ostream& operator << ( std::ostream&, DBus::Xml::Document& );
 
-#endif//__DBUSXX_XML_H
+#endif//__DBUSMM_XML_H

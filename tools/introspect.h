@@ -26,10 +26,10 @@
 #define __DBUSXX_TOOLS_INTROSPECT_H
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include "dbusmm_config.h"
 #endif
 
-#include <dbus-c++/dbus.h>
+#include <dbusmm/dbus.h>
 #include <string>
 
 class IntrospectedObject : public DBus::IntrospectableProxy, public DBus::ObjectProxy
