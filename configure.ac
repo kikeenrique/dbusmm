@@ -98,7 +98,7 @@ if test "$enable_doxygen_docs" = "yes" ; then
 	fi
 	AC_MSG_RESULT(yes)
 	dnl check if graphviz / dot is installed (used by doxygen)
-	AC_CHECK_PROGS(DOT, [dot], no)
+	AC_CHECK_PROGS([DOT], [dot], [no])
 	if test x$DOT = xno; then
 	   	AC_MSG_WARN([graphviz / dot not found, documentation graphs will not be rebuilt])
 	fi
@@ -150,7 +150,18 @@ if test "$enable_glib" = "yes" ; then
 	AC_SUBST(glib_CFLAGS)
 	AC_SUBST(glib_LIBS)
 	AM_CONDITIONAL(ENABLE_GLIB, test 1 = 1)
+else
+	AM_CONDITIONAL(ENABLE_GLIB, test 0 = 1)
+fi
 
+#glib examples uses gtkmm to build a gui application. Althought 
+AC_ARG_ENABLE([examples],
+	      AC_HELP_STRING([--enable-examples],
+			     [Building examples explicitly required, but gtkmm-2.4-dev not found (only glib example needs it)]),
+	      [enable_examples=$enableval],
+	      [enable_examples=no]
+)
+if test "$enable_examples" = "yes" ; then
 	PKG_CHECK_MODULES([gtkmm], 
 			  [gtkmm-2.4],
 			  [AM_CONDITIONAL(HAVE_GTKMM, test 1 = 1)],
@@ -158,10 +169,10 @@ if test "$enable_glib" = "yes" ; then
 	AC_SUBST(gtkmm_CFLAGS)
 	AC_SUBST(gtkmm_LIBS)
 else
-	AM_CONDITIONAL(ENABLE_GLIB, test 0 = 1)
 	AM_CONDITIONAL(HAVE_GTKMM, test 0 = 1)
 fi
 
+# xml needed by tools/xml2cpp and glib example.
 AC_CHECK_LIB([expat],
 	     [XML_ParserCreate_MM],
 	     [AC_CHECK_HEADERS(expat.h, have_expat=true, have_expat=false)],
@@ -192,7 +203,6 @@ AM_CONDITIONAL(HAVE_PTHREAD, test "$have_pthread" = "true")
 #		Checks for typedefs, structures, and compiler characteristics.
 ################################################################################
 
-#AM_CONFIG_HEADER([include/dbusmm/config.h])
 AC_CONFIG_HEADERS([include/dbusmm/dbusmm_config.h])
 
 AM_PROG_LIBTOOL
