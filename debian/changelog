@@ -1,3 +1,13 @@
+dbusmm (0.5.0-2) unstable; urgency=low
+
+  * fix missing data file org.freedesktop.DBus.xml
+
+  * fix missing examples Makefiles
+
+  * gtkmm-2.4-dev dependency is only needed by one example
+
+ -- Enrique Garcia <kike+deb@eldemonionegro.com>  Mon, 07 Apr 2008 09:49:05 -0700
+
 dbusmm (0.5.0-1) unstable; urgency=low
 
   * Initial release (Closes: #000)  

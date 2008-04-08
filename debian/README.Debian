@@ -1,6 +1,8 @@
-dbusmm1 for Debian
+dbusmm for Debian
 ------------------
 
-<possible notes regarding this package - if none, delete this file>
+Possible notes regarding this package.
 
- -- enrgar <kike+deb@eldemonionegro.com>  Tue, 01 Apr 2008 18:54:35 +0200
+It's a library incomplete, so maybe lacks latest DBus characteristics.
+
+ -- enrgar <enrgar@pepu>, Mon,  7 Apr 2008 21:04:14 +0200

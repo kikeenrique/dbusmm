@@ -4,19 +4,24 @@ debian/tmp/usr/lib/libdbusmm-1.0*.so
 debian/tmp/usr/lib/libdbusmm-1.0*.a
 debian/tmp/usr/lib/libdbusmm-1.0*.la
 debian/tmp/usr/lib/pkgconfig
-examples/README			usr/share/doc/libdbusmm-1.0-dev/examples
-examples/echo/README		usr/share/doc/libdbusmm-1.0-dev/examples/echo
-examples/echo/echo-client.cpp	usr/share/doc/libdbusmm-1.0-dev/examples/echo
-examples/echo/echo-client.h	usr/share/doc/libdbusmm-1.0-dev/examples/echo
+debian/tmp/usr/share/dbusmm
+examples/README			  usr/share/doc/libdbusmm-1.0-dev/examples
+examples/Makefile		  usr/share/doc/libdbusmm-1.0-dev/examples
+examples/echo/README		  usr/share/doc/libdbusmm-1.0-dev/examples/echo
+examples/echo/echo-client.cpp	  usr/share/doc/libdbusmm-1.0-dev/examples/echo
+examples/echo/echo-client.h	  usr/share/doc/libdbusmm-1.0-dev/examples/echo
 examples/echo/echo-introspect.xml usr/share/doc/libdbusmm-1.0-dev/examples/echo
 examples/echo/echo-server.cpp	  usr/share/doc/libdbusmm-1.0-dev/examples/echo
 examples/echo/echo-server.h	  usr/share/doc/libdbusmm-1.0-dev/examples/echo
+examples/echo/Makefile		  usr/share/doc/libdbusmm-1.0-dev/examples/echo
 examples/glib/dbus-browser.cpp	  usr/share/doc/libdbusmm-1.0-dev/examples/glib
 examples/glib/dbus-browser.h	  usr/share/doc/libdbusmm-1.0-dev/examples/glib
+examples/glib/Makefile		  usr/share/doc/libdbusmm-1.0-dev/examples/glib
 examples/hal/hal-listen.cpp	  usr/share/doc/libdbusmm-1.0-dev/examples/hal
 examples/hal/hal-listen.h	  usr/share/doc/libdbusmm-1.0-dev/examples/hal
+examples/hal/Makefile		  usr/share/doc/libdbusmm-1.0-dev/examples/hal
 examples/properties/README	  	 usr/share/doc/libdbusmm-1.0-dev/examples/properties
 examples/properties/props-introspect.xml usr/share/doc/libdbusmm-1.0-dev/examples/properties
 examples/properties/props-server.cpp	 usr/share/doc/libdbusmm-1.0-dev/examples/properties
 examples/properties/props-server.h	 usr/share/doc/libdbusmm-1.0-dev/examples/properties
-
+examples/properties/Makefile		 usr/share/doc/libdbusmm-1.0-dev/examples/properties

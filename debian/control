@@ -6,9 +6,10 @@ Build-Depends: debhelper (>= 6),
 	       cdbs,
 	       libdbus-1-dev (>= 1.1.20),
 	       libglib2.0-dev (>= 2.12.0),
-	       libgtkmm-2.4-dev (>= 2.12.0),
+	       libdbus-1-dev (>= 1.1.20),
 	       libexpat1-dev,
-	       doxygen
+	       doxygen,
+	       graphviz
 Standards-Version: 3.7.3
 
 Package: libdbusmm-1.0-dev
@@ -16,7 +17,8 @@ Section: libdevel
 Architecture: any
 Depends: libdbusmm-1.0-1 (= ${binary:Version}),
 	 libdbus-1-dev (>= 1.1.20)
-Suggests: libdbusmm-1.0-doc
+Suggests: libdbusmm-1.0-doc,
+	  libgtkmm-2.4-dev (>= 2.12.0)
 Description: C++ wrappers for D-Bus (development files)
  dbusmm provides C++ bindings for the D-Bus.
  D-Bus is a message bus system, a simple way for
@@ -33,7 +35,8 @@ Description: C++ wrappers for D-Bus (development files)
 Package: libdbusmm-1.0-1
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}
+Depends: ${shlibs:Depends},
+	 ${misc:Depends}
 Description: C++ wrappers for D-Bus (shared libraries)
  dbusmm provides C++ bindings for the D-Bus. 
  D-Bus is a message bus system, a simple way for 
