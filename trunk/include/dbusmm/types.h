@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_TYPES_H
-#define __DBUSXX_TYPES_H
+#ifndef __DBUSMM_TYPES_H
+#define __DBUSMM_TYPES_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <string>
@@ -51,7 +51,7 @@ typedef unsigned long long UInt64;
 typedef double Double;
 typedef std::string String;
 
-struct DXXAPI Path : public std::string
+struct DMMAPI Path : public std::string
 { 
 	Path() {}
 	Path( const std::string& s ) : std::string(s) {}
@@ -63,7 +63,7 @@ struct DXXAPI Path : public std::string
 	}
 };
 
-struct DXXAPI Signature : public std::string
+struct DMMAPI Signature : public std::string
 { 
 	Signature() {}
 	Signature( const std::string& s ) : std::string(s) {}
@@ -75,9 +75,9 @@ struct DXXAPI Signature : public std::string
 	}
 };
 
-struct DXXAPI Invalid {};
+struct DMMAPI Invalid {};
 
-class DXXAPI Variant
+class DMMAPI Variant
 {
 public:
 
@@ -345,7 +345,7 @@ inline DBus::MessageIter& operator << ( DBus::MessageIter& iter, const DBus::Str
 	return iter;
 }
 
-extern DXXAPI DBus::MessageIter& operator << ( DBus::MessageIter& iter, const DBus::Variant& val );
+extern DMMAPI DBus::MessageIter& operator << ( DBus::MessageIter& iter, const DBus::Variant& val );
 
 /*
  */
@@ -508,7 +508,7 @@ inline DBus::MessageIter& operator >> ( DBus::MessageIter& iter, DBus::Struct<T1
 	return ++iter;
 }
 
-extern DXXAPI DBus::MessageIter& operator >> ( DBus::MessageIter& iter, DBus::Variant& val );
+extern DMMAPI DBus::MessageIter& operator >> ( DBus::MessageIter& iter, DBus::Variant& val );
 	
-#endif//__DBUSXX_TYPES_H
+#endif//__DBUSMM_TYPES_H
 

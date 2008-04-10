@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_DISPATCHER_P_H
-#define __DBUSXX_DISPATCHER_P_H
+#ifndef __DBUSMM_DISPATCHER_P_H
+#define __DBUSMM_DISPATCHER_P_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/dispatcher.h>
@@ -37,7 +37,7 @@
 
 namespace DBus {
 
-struct DXXAPILOCAL Dispatcher::Private
+struct DMMAPILOCAL Dispatcher::Private
 {
 	static dbus_bool_t on_add_watch( DBusWatch* watch, void* data );
 
@@ -54,4 +54,4 @@ struct DXXAPILOCAL Dispatcher::Private
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_DISPATCHER_P_H
+#endif//__DBUSMM_DISPATCHER_P_H

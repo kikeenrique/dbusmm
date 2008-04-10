@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_PROPERTY_H
-#define __DBUSXX_PROPERTY_H
+#ifndef __DBUSMM_PROPERTY_H
+#define __DBUSMM_PROPERTY_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -68,7 +68,7 @@ private:
 
 struct IntrospectedInterface;
 
-class DXXAPI PropertiesAdaptor : public InterfaceAdaptor
+class DMMAPI PropertiesAdaptor : public InterfaceAdaptor
 {
 public:
 
@@ -89,7 +89,7 @@ protected:
 	IntrospectedInterface* const introspect() const;
 };
 
-class DXXAPI PropertiesProxy : public InterfaceProxy
+class DMMAPI PropertiesProxy : public InterfaceProxy
 {
 public:
 
@@ -102,5 +102,5 @@ public:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_PROPERTY_H
+#endif//__DBUSMM_PROPERTY_H
 

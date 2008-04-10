@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_MESSAGE_P_H
-#define __DBUSXX_MESSAGE_P_H
+#ifndef __DBUSMM_MESSAGE_P_H
+#define __DBUSMM_MESSAGE_P_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/message.h>
@@ -36,7 +36,7 @@
 
 namespace DBus {
 
-struct DXXAPILOCAL Message::Private
+struct DMMAPILOCAL Message::Private
 {
 	DBusMessage* msg;
 
@@ -49,4 +49,4 @@ struct DXXAPILOCAL Message::Private
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_MESSAGE_P_H
+#endif//__DBUSMM_MESSAGE_P_H

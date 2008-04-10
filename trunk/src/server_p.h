@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_SERVER_P_H
-#define __DBUSXX_SERVER_P_H
+#ifndef __DBUSMM_SERVER_P_H
+#define __DBUSMM_SERVER_P_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/server.h>
@@ -37,7 +37,7 @@
 
 namespace DBus {
 
-struct DXXAPILOCAL Server::Private 
+struct DMMAPILOCAL Server::Private 
 {
 	DBusServer* server;
 
@@ -54,4 +54,4 @@ struct DXXAPILOCAL Server::Private
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_SERVER_P_H
+#endif//__DBUSMM_SERVER_P_H

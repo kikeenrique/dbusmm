@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_MESSAGE_H
-#define __DBUSXX_MESSAGE_H
+#ifndef __DBUSMM_MESSAGE_H
+#define __DBUSMM_MESSAGE_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <string>
@@ -44,7 +44,7 @@ class ReturnMessage;
 class Error;
 class Connection;
 
-class DXXAPI MessageIter
+class DMMAPI MessageIter
 {
 public:
 
@@ -141,11 +141,11 @@ public:
 
 private:
 
-	DXXAPILOCAL MessageIter(Message& msg) : _msg(&msg) {}
+	DMMAPILOCAL MessageIter(Message& msg) : _msg(&msg) {}
 
-	DXXAPILOCAL bool append_basic( int type_id, void* value );
+	DMMAPILOCAL bool append_basic( int type_id, void* value );
 
-	DXXAPILOCAL void get_basic( int type_id, void* ptr );
+	DMMAPILOCAL void get_basic( int type_id, void* ptr );
 
 private:
 
@@ -158,7 +158,7 @@ private:
 friend class Message;
 };
 
-class DXXAPI Message
+class DMMAPI Message
 {
 public:
 	
@@ -222,7 +222,7 @@ friend class Connection;
 /*
 */
 
-class DXXAPI ErrorMessage : public Message
+class DMMAPI ErrorMessage : public Message
 {
 public:
 	
@@ -240,7 +240,7 @@ public:
 /*
 */
 
-class DXXAPI SignalMessage : public Message
+class DMMAPI SignalMessage : public Message
 {
 public:
 
@@ -268,7 +268,7 @@ public:
 /*
 */
 
-class DXXAPI CallMessage : public Message
+class DMMAPI CallMessage : public Message
 {
 public:
 	
@@ -298,7 +298,7 @@ public:
 /*
 */
 
-class DXXAPI ReturnMessage : public Message
+class DMMAPI ReturnMessage : public Message
 {
 public:
 	
@@ -309,4 +309,4 @@ public:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_MESSAGE_H
+#endif//__DBUSMM_MESSAGE_H

@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_PENDING_CALL_H
-#define __DBUSXX_PENDING_CALL_H
+#ifndef __DBUSMM_PENDING_CALL_H
+#define __DBUSMM_PENDING_CALL_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -37,7 +37,7 @@ namespace DBus {
 
 class Connection;
 
-class DXXAPI PendingCall
+class DMMAPI PendingCall
 {
 public:
 
@@ -75,4 +75,4 @@ friend class Connection;
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_PENDING_CALL_H
+#endif//__DBUSMM_PENDING_CALL_H

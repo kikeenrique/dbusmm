@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_REFPTR_IMPL_H
-#define __DBUSXX_REFPTR_IMPL_H
+#ifndef __DBUSMM_REFPTR_IMPL_H
+#define __DBUSMM_REFPTR_IMPL_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -47,4 +47,4 @@ RefPtrI<T>::~RefPtrI()
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_REFPTR_IMPL_H
+#endif//__DBUSMM_REFPTR_IMPL_H

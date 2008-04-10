@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_INTERFACE_H
-#define __DBUSXX_INTERFACE_H
+#ifndef __DBUSMM_INTERFACE_H
+#define __DBUSMM_INTERFACE_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <string>
@@ -40,7 +40,7 @@
 namespace DBus {
 
 //todo: this should belong to to properties.h
-struct DXXAPI PropertyData
+struct DMMAPI PropertyData
 {
 	bool		read;
 	bool		write;
@@ -58,7 +58,7 @@ class SignalMessage;
 
 typedef std::map<std::string, InterfaceAdaptor*> InterfaceAdaptorTable;
 
-class DXXAPI AdaptorBase
+class DMMAPI AdaptorBase
 {
 public:
 
@@ -85,7 +85,7 @@ class CallMessage;
 
 typedef std::map<std::string, InterfaceProxy*> InterfaceProxyTable;
 
-class DXXAPI ProxyBase
+class DMMAPI ProxyBase
 {
 public:
 
@@ -103,7 +103,7 @@ protected:
 	InterfaceProxyTable _interfaces;
 };
 
-class DXXAPI Interface
+class DMMAPI Interface
 {
 public:
 	
@@ -131,7 +131,7 @@ const std::string& Interface::name() const
 
 typedef std::map< std::string, Slot<Message, const CallMessage&> > MethodTable;
 
-class DXXAPI InterfaceAdaptor : public Interface, public virtual AdaptorBase
+class DMMAPI InterfaceAdaptor : public Interface, public virtual AdaptorBase
 {
 public:
 
@@ -161,7 +161,7 @@ protected:
 
 typedef std::map< std::string, Slot<void, const SignalMessage&> > SignalTable;
 
-class DXXAPI InterfaceProxy : public Interface, public virtual ProxyBase
+class DMMAPI InterfaceProxy : public Interface, public virtual ProxyBase
 {
 public:
 
@@ -192,4 +192,4 @@ protected:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_INTERFACE_H
+#endif//__DBUSMM_INTERFACE_H

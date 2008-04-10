@@ -508,7 +508,7 @@ void generate_adaptor( Xml::Document& doc, const char* filename )
 	string filestring = filename;
 	underscorize(filestring);
 
-	string cond_comp = "__dbusxx__" + filestring + "__ADAPTOR_MARSHAL_H";
+	string cond_comp = "__dbusmm__" + filestring + "__ADAPTOR_MARSHAL_H";
 
 	file << "#ifndef " << cond_comp << endl
 	     << "#define " << cond_comp << endl;

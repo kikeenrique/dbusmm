@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_EVENTLOOP_H
-#define __DBUSXX_EVENTLOOP_H
+#ifndef __DBUSMM_EVENTLOOP_H
+#define __DBUSMM_EVENTLOOP_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #ifdef HAVE_PTHREAD
@@ -49,7 +49,7 @@ namespace DBus {
 
 class DefaultMainLoop;
 
-class DXXAPI DefaultTimeout
+class DMMAPI DefaultTimeout
 {
 public:
 
@@ -89,7 +89,7 @@ friend class DefaultMainLoop;
 
 typedef std::list< DefaultTimeout* > DefaultTimeouts;
 
-class DXXAPI DefaultWatch
+class DMMAPI DefaultWatch
 {
 public:
 
@@ -129,7 +129,7 @@ friend class DefaultMainLoop;
 
 typedef std::list< DefaultWatch* > DefaultWatches;
 
-class DXXAPI DefaultMutex
+class DMMAPI DefaultMutex
 {
 public:
 
@@ -154,7 +154,7 @@ private:
 #endif
 };
 
-class DXXAPI DefaultMainLoop
+class DMMAPI DefaultMainLoop
 {
 public:
 
@@ -178,4 +178,4 @@ friend class DefaultWatch;
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_EVENTLOOP_H
+#endif//__DBUSMM_EVENTLOOP_H

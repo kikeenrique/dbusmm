@@ -1,10 +1,13 @@
 SUBDIRS = src tools data docs examples
 
-EXTRA_DIST = autogen.sh dbusmm-1.0.pc.in
+EXTRA_DIST = autogen.sh dbusmm_config.h.in dbusmm-1.0.pc.in
 
-# Install the pkg-config file:
-pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = dbusmm-1.0.pc
+dbusmm_configdir	= $(libdir)/dbusmm-1.0/include
+dbusmm_config_DATA	= dbusmm_config.h
+
+pkgconfigdir 		= $(libdir)/pkgconfig
+pkgconfig_DATA 		= dbusmm-1.0.pc
+
 
 MAINTAINERCLEANFILES = \
 	configure \

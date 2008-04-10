@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_PENDING_CALL_P_H
-#define __DBUSXX_PENDING_CALL_P_H
+#ifndef __DBUSMM_PENDING_CALL_P_H
+#define __DBUSMM_PENDING_CALL_P_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/pendingcall.h>
@@ -36,7 +36,7 @@
 
 namespace DBus {
 
-struct DXXAPILOCAL PendingCall::Private
+struct DMMAPILOCAL PendingCall::Private
 {
 	DBusPendingCall* call;
 	int dataslot;
@@ -51,4 +51,4 @@ struct DXXAPILOCAL PendingCall::Private
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_PENDING_CALL_P_H
+#endif//__DBUSMM_PENDING_CALL_P_H

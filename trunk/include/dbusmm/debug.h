@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_DEBUG_H
-#define __DBUSXX_DEBUG_H
+#ifndef __DBUSMM_DEBUG_H
+#define __DBUSMM_DEBUG_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -35,7 +35,7 @@ namespace DBus {
 
 typedef void (*LogFunction)(const char* format, ...);
 
-extern DXXAPI LogFunction debug_log;
+extern DMMAPI LogFunction debug_log;
 
 } /* namespace DBus */
 

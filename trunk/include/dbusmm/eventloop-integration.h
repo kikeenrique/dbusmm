@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_EVENTLOOP_INTEGRATION_H
-#define __DBUSXX_EVENTLOOP_INTEGRATION_H
+#ifndef __DBUSMM_EVENTLOOP_INTEGRATION_H
+#define __DBUSMM_EVENTLOOP_INTEGRATION_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -42,7 +42,7 @@ namespace DBus {
 
 class BusDispatcher;
 
-class DXXAPI BusTimeout : public Timeout, public DefaultTimeout
+class DMMAPI BusTimeout : public Timeout, public DefaultTimeout
 {
 	BusTimeout( Timeout::Internal*, BusDispatcher* );
 
@@ -51,7 +51,7 @@ class DXXAPI BusTimeout : public Timeout, public DefaultTimeout
 friend class BusDispatcher;
 };
 
-class DXXAPI BusWatch : public Watch, public DefaultWatch
+class DMMAPI BusWatch : public Watch, public DefaultWatch
 {
 	BusWatch( Watch::Internal*, BusDispatcher* );
 
@@ -60,7 +60,7 @@ class DXXAPI BusWatch : public Watch, public DefaultWatch
 friend class BusDispatcher;
 };
 
-class DXXAPI BusDispatcher : public Dispatcher, public DefaultMainLoop
+class DMMAPI BusDispatcher : public Dispatcher, public DefaultMainLoop
 {
 public:
 
@@ -95,4 +95,4 @@ private:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_EVENTLOOP_INTEGRATION_H
+#endif//__DBUSMM_EVENTLOOP_INTEGRATION_H

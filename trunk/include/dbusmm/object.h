@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_OBJECT_H
-#define __DBUSXX_OBJECT_H
+#ifndef __DBUSMM_OBJECT_H
+#define __DBUSMM_OBJECT_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <string>
@@ -40,7 +40,7 @@
 
 namespace DBus {
 
-class DXXAPI Object
+class DMMAPI Object
 {
 protected:
 
@@ -58,9 +58,9 @@ public:
 
 private:
 
-	DXXAPILOCAL virtual bool handle_message( const Message& ) = 0;
-	DXXAPILOCAL virtual void register_obj() = 0;
-	DXXAPILOCAL virtual void unregister_obj() = 0;
+	DMMAPILOCAL virtual bool handle_message( const Message& ) = 0;
+	DMMAPILOCAL virtual void register_obj() = 0;
+	DMMAPILOCAL virtual void unregister_obj() = 0;
 
 private:
 
@@ -90,7 +90,7 @@ const std::string& Object::service() const
 /*
 */
 
-class DXXAPI Tag
+class DMMAPI Tag
 {
 public:
 
@@ -105,7 +105,7 @@ class ObjectAdaptor;
 
 typedef std::list<ObjectAdaptor*> ObjectAdaptorPList;
 
-class DXXAPI ObjectAdaptor : public Object, public virtual AdaptorBase
+class DMMAPI ObjectAdaptor : public Object, public virtual AdaptorBase
 {
 public:
 
@@ -123,7 +123,7 @@ public:
 
 protected:
 
-	class DXXAPI Continuation
+	class DMMAPI Continuation
 	{
 	public:
 
@@ -189,7 +189,7 @@ class ObjectProxy;
 
 typedef std::list<ObjectProxy*> ObjectProxyPList;
 
-class DXXAPI ObjectProxy : public Object, public virtual ProxyBase
+class DMMAPI ObjectProxy : public Object, public virtual ProxyBase
 {
 public:
 
@@ -220,4 +220,4 @@ const ObjectProxy* ObjectProxy::object() const
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_OBJECT_H
+#endif//__DBUSMM_OBJECT_H

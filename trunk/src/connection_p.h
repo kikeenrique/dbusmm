@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_CONNECTION_P_H
-#define __DBUSXX_CONNECTION_P_H
+#ifndef __DBUSMM_CONNECTION_P_H
+#define __DBUSMM_CONNECTION_P_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/connection.h>
@@ -40,7 +40,7 @@
 
 namespace DBus {
 
-struct DXXAPILOCAL Connection::Private
+struct DMMAPILOCAL Connection::Private
 {
 	DBusConnection*	conn;
 
@@ -70,4 +70,4 @@ struct DXXAPILOCAL Connection::Private
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_CONNECTION_P_H
+#endif//__DBUSMM_CONNECTION_P_H

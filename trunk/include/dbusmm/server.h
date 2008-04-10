@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_SERVER_H
-#define __DBUSXX_SERVER_H
+#ifndef __DBUSMM_SERVER_H
+#define __DBUSMM_SERVER_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <list>
@@ -43,7 +43,7 @@ class Server;
 
 typedef std::list<Server> ServerList;
 
-class DXXAPI Server
+class DMMAPI Server
 {
 public:
 
@@ -75,4 +75,4 @@ private:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_SERVER_H
+#endif//__DBUSMM_SERVER_H

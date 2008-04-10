@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_CONNECTION_H
-#define __DBUSXX_CONNECTION_H
+#ifndef __DBUSMM_CONNECTION_H
+#define __DBUSMM_CONNECTION_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <list>
@@ -48,7 +48,7 @@ typedef std::list<Connection>	ConnectionList;
 class ObjectAdaptor;
 class Dispatcher;
 
-class DXXAPI Connection
+class DMMAPI Connection
 {
 public:
 
@@ -112,7 +112,7 @@ public:
 
 private:
 
-	DXXAPILOCAL void init();
+	DMMAPILOCAL void init();
 
 private:
 
@@ -123,4 +123,4 @@ friend class ObjectAdaptor; // needed in order to register object paths for a co
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_CONNECTION_H
+#endif//__DBUSMM_CONNECTION_H

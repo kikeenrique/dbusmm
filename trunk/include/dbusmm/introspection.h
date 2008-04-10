@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_INTROSPECTION_H
-#define __DBUSXX_INTROSPECTION_H
+#ifndef __DBUSMM_INTROSPECTION_H
+#define __DBUSMM_INTROSPECTION_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -34,20 +34,20 @@
 
 namespace DBus {
 
-struct DXXAPI IntrospectedArgument
+struct DMMAPI IntrospectedArgument
 {
 	const char* name;
 	const char* type;
 	const bool  in;
 };
 
-struct DXXAPI IntrospectedMethod
+struct DMMAPI IntrospectedMethod
 {
 	const char* name;
 	const IntrospectedArgument* args;
 };
 
-struct DXXAPI IntrospectedProperty
+struct DMMAPI IntrospectedProperty
 {
 	const char* name;
 	const char* type;
@@ -55,7 +55,7 @@ struct DXXAPI IntrospectedProperty
 	const bool  write;
 };
 
-struct DXXAPI IntrospectedInterface
+struct DMMAPI IntrospectedInterface
 {
 	const char* name;
 	const IntrospectedMethod* methods;
@@ -63,7 +63,7 @@ struct DXXAPI IntrospectedInterface
 	const IntrospectedProperty* properties;
 };
 
-class DXXAPI IntrospectableAdaptor : public InterfaceAdaptor
+class DMMAPI IntrospectableAdaptor : public InterfaceAdaptor
 {
 public:
 
@@ -76,7 +76,7 @@ protected:
 	IntrospectedInterface* const introspect() const;
 };
 
-class DXXAPI IntrospectableProxy : public InterfaceProxy
+class DMMAPI IntrospectableProxy : public InterfaceProxy
 {
 public:
 
@@ -87,4 +87,4 @@ public:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_INTROSPECTION_H
+#endif//__DBUSMM_INTROSPECTION_H

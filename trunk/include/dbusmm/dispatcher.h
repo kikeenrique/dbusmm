@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_DISPATCHER_H
-#define __DBUSXX_DISPATCHER_H
+#ifndef __DBUSMM_DISPATCHER_H
+#define __DBUSMM_DISPATCHER_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -35,7 +35,7 @@
 
 namespace DBus {
 
-class DXXAPI Timeout
+class DMMAPI Timeout
 {
 public:
 
@@ -55,14 +55,14 @@ public:
 
 private:
 
-	DXXAPILOCAL Timeout( const Timeout& );
+	DMMAPILOCAL Timeout( const Timeout& );
 
 private:
 
 	Internal* _int;
 };
 
-class DXXAPI Watch
+class DMMAPI Watch
 {
 public:
 
@@ -84,14 +84,14 @@ public:
 
 private:
 
-	DXXAPILOCAL Watch( const Watch& );
+	DMMAPILOCAL Watch( const Watch& );
 
 private:
 
 	Internal* _int;
 };
 
-class DXXAPI Dispatcher
+class DMMAPI Dispatcher
 {
 public:
 
@@ -122,12 +122,12 @@ private:
 	Connection::PrivatePList _pending_queue;
 };
 
-extern DXXAPI Dispatcher* default_dispatcher;
+extern DMMAPI Dispatcher* default_dispatcher;
 
 /* classes for multithreading support
 */
 
-class DXXAPI Mutex
+class DMMAPI Mutex
 {
 public:
 
@@ -144,7 +144,7 @@ protected:
 	Internal* _int;
 };
 
-class DXXAPI CondVar
+class DMMAPI CondVar
 {
 public:
 
@@ -185,10 +185,10 @@ typedef void (*CondVarWakeOneFn)( CondVar* cv );
 typedef void (*CondVarWakeAllFn)( CondVar* cv );
 
 #ifdef DBUS_HAS_THREADS_INIT_DEFAULT
-void DXXAPI _init_threading();
+void DMMAPI _init_threading();
 #endif//DBUS_HAS_THREADS_INIT_DEFAULT
 
-void DXXAPI _init_threading(
+void DMMAPI _init_threading(
 	MutexNewFn, MutexFreeFn, MutexLockFn, MutexUnlockFn,
 	CondVarNewFn, CondVarFreeFn, CondVarWaitFn, CondVarWaitTimeoutFn, CondVarWakeOneFn, CondVarWakeAllFn
 );
@@ -257,4 +257,4 @@ struct Threading
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_DISPATCHER_H
+#endif//__DBUSMM_DISPATCHER_H

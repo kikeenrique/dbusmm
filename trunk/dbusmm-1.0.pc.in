@@ -3,9 +3,9 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: dbus-c++
+Name: dbusmm
 Description: Native C++ bindings for D-Bus.
 Requires: dbus-1
 Version: @VERSION@
-Libs: -L${libdir} -ldbus-c++-1
-Cflags: -I${includedir}/dbus-c++-1 -DDBUS_API_SUBJECT_TO_CHANGE
+Libs: -L${libdir} -ldbusmm-1.0
+Cflags: -I${includedir}/dbusmm-1.0 -DDBUS_API_SUBJECT_TO_CHANGE -I${libdir}/dbusmm-1.0/include

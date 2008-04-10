@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_TOOLS_INTROSPECT_H
-#define __DBUSXX_TOOLS_INTROSPECT_H
+#ifndef __DBUSMM_TOOLS_INTROSPECT_H
+#define __DBUSMM_TOOLS_INTROSPECT_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/dbus.h>
@@ -41,4 +41,4 @@ public:
 	{}
 };
 
-#endif//__DBUSXX_TOOLS_INTROSPECT_H
+#endif//__DBUSMM_TOOLS_INTROSPECT_H

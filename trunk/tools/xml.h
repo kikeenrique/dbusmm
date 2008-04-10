@@ -26,7 +26,7 @@
 #define __DBUSMM_XML_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <exception>

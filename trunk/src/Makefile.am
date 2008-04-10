@@ -10,7 +10,6 @@ endif
 
 HEADER_DIR  = $(top_srcdir)/include/dbusmm
 HEADER_FILES = \
-	$(HEADER_DIR)/dbusmm_config.h \
 	$(HEADER_DIR)/dbus.h \
 	$(HEADER_DIR)/types.h \
 	$(HEADER_DIR)/connection.h \

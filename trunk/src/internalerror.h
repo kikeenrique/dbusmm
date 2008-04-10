@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_INTERNALERROR_H
-#define __DBUSXX_INTERNALERROR_H
+#ifndef __DBUSMM_INTERNALERROR_H
+#define __DBUSMM_INTERNALERROR_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/error.h>
@@ -35,7 +35,7 @@
 
 namespace DBus {
 
-struct DXXAPI InternalError
+struct DMMAPI InternalError
 {
 	DBusError	error;
 
@@ -74,4 +74,4 @@ struct DXXAPI InternalError
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_INTERNALERROR_H
+#endif//__DBUSMM_INTERNALERROR_H

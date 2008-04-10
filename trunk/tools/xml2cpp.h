@@ -26,7 +26,7 @@
 #define __DBUSMM_TOOLS_XML2CPP_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <dbusmm/dbus.h>

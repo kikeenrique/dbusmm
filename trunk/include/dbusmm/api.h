@@ -22,21 +22,21 @@
  */
 
 
-#ifndef __DBUSXX_API_H
-#define __DBUSXX_API_H
+#ifndef __DBUSMM_API_H
+#define __DBUSMM_API_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #ifdef GCC_HASCLASSVISIBILITY
-# define DXXAPILOCAL __attribute__ ((visibility("hidden")))
-# define DXXAPIPUBLIC __attribute__ ((visibility("default")))
+# define DMMAPILOCAL __attribute__ ((visibility("hidden")))
+# define DMMAPIPUBLIC __attribute__ ((visibility("default")))
 #else
-# define DXXAPILOCAL
-# define DXXAPIPUBLIC
+# define DMMAPILOCAL
+# define DMMAPIPUBLIC
 #endif
 
-#define DXXAPI DXXAPIPUBLIC
+#define DMMAPI DMMAPIPUBLIC
 
-#endif//__DBUSXX_API_H
+#endif//__DBUSMM_API_H

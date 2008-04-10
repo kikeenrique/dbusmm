@@ -4,7 +4,7 @@
 #include <signal.h>
 
 #ifdef HAVE_CONFIG_H
-#include <dbusmm/dbusmm_config.h>
+#include <dbusmm_config.h>
 #endif
 
 using namespace std;

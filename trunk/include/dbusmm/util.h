@@ -22,11 +22,11 @@
  */
 
 
-#ifndef __DBUSXX_UTIL_H
-#define __DBUSXX_UTIL_H
+#ifndef __DBUSMM_UTIL_H
+#define __DBUSMM_UTIL_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include "api.h"
@@ -38,7 +38,7 @@ namespace DBus {
  *   Very simple reference counting
  */
 
-class DXXAPI RefCnt
+class DMMAPI RefCnt
 {
 public:
 
@@ -79,11 +79,11 @@ public:
 
 private:
 
-	DXXAPILOCAL void ref() const
+	DMMAPILOCAL void ref() const
 	{
 		++ (*__ref);
 	}
-	DXXAPILOCAL void unref() const
+	DMMAPILOCAL void unref() const
 	{
 		-- (*__ref);
 
@@ -274,4 +274,4 @@ private:
 
 } /* namespace DBus */
 
-#endif//__DBUSXX_UTIL_H
+#endif//__DBUSMM_UTIL_H

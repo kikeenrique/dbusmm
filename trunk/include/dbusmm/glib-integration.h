@@ -26,7 +26,7 @@
 #define __DBUSMM_GLIB_INTEGRATION_H
 
 #ifdef HAVE_CONFIG_H
-#include "dbusmm_config.h"
+#include <dbusmm_config.h>
 #endif
 
 #include <glib.h>
@@ -41,7 +41,7 @@ namespace Glib {
 
 class BusDispatcher;
 
-class DXXAPI BusTimeout : public Timeout
+class DMMAPI BusTimeout : public Timeout
 {
 private:
 
@@ -65,7 +65,7 @@ private:
 friend class BusDispatcher;
 };
 
-class DXXAPI BusWatch : public Watch
+class DMMAPI BusWatch : public Watch
 {
 private:
 
@@ -89,7 +89,7 @@ private:
 friend class BusDispatcher;
 };
 
-class DXXAPI BusDispatcher : public Dispatcher
+class DMMAPI BusDispatcher : public Dispatcher
 {
 public:
 	BusDispatcher() : _ctx(NULL) {}
