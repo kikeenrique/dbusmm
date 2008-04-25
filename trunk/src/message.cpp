@@ -242,9 +242,14 @@ int MessageIter::array_type()
 	return dbus_message_iter_get_element_type((DBusMessageIter*)&_iter);
 }
 
+// MessageIter::get_array() only works with fixed-length types
 int MessageIter::get_array( void* ptr )
 {
 	int length;
+        int type = dbus_message_iter_get_element_type((DBusMessageIter*)&_iter);
+
+	if(!dbus_type_is_fixed(type))
+		throw ErrorInvalidArgs("array element should be fixed length"); 
 	dbus_message_iter_get_fixed_array((DBusMessageIter*)&_iter, ptr, &length);
 	return length;
 }

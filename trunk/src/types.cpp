@@ -101,14 +101,132 @@ MessageIter& operator >> ( MessageIter& iter, Variant& val )
 	return ++iter;
 }
 
-std::istream& operator >> ( std::istream& is, Variant& val )
+std::ostream& operator << ( std::ostream& os, const Variant& val )
 {
-	std::cout << "istream " << std::endl;
-	return is;
-}
+	MessageIter it = val.reader();
 
-std::ostream& operator >> ( std::ostream& os, Variant& val )
-{
-	std::cout << "ostream " << std::endl;
+	switch (it.type()){
+	    	case DBUS_TYPE_BYTE:
+			os << it.get_byte();
+			break;
+	    	case DBUS_TYPE_BOOLEAN:
+			os << it.get_bool();
+			break;
+	    	case DBUS_TYPE_INT16:
+			os << it.get_int16();
+			break;
+	    	case DBUS_TYPE_UINT16:
+			os << it.get_uint16();
+			break;
+	    	case DBUS_TYPE_INT32:
+			os << it.get_int32();
+			break;
+	    	case DBUS_TYPE_UINT32:
+			os << it.get_uint32();
+			break;
+	    	case DBUS_TYPE_INT64:
+			os << it.get_int64();
+			break;
+	    	case DBUS_TYPE_UINT64:
+			os << it.get_uint64();
+			break;
+	    	case DBUS_TYPE_DOUBLE:
+			os << it.get_double();
+			break;
+	    	case DBUS_TYPE_STRING:
+    			os << "(string) ";
+			os << it.get_string();
+			break;
+		case DBUS_TYPE_ARRAY:
+			os << "(array) ";
+			switch (it.array_type()){
+			    	case DBUS_TYPE_BYTE: 
+					{
+					std::vector<DBus::Byte> array;
+					it.get_array(&array);
+					os << array;
+					break;
+					}
+			    	case DBUS_TYPE_BOOLEAN:
+					{
+					std::vector<DBus::Bool> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+			    	case DBUS_TYPE_INT16:
+					{
+					std::vector<DBus::Int16> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+			    	case DBUS_TYPE_UINT16:
+					{
+					std::vector<DBus::UInt16> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+	    			case DBUS_TYPE_INT32:
+					{
+					std::vector<DBus::Int32> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+			    	case DBUS_TYPE_UINT32:
+					{
+					std::vector<DBus::UInt32> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+			    	case DBUS_TYPE_INT64:
+					{
+					std::vector<DBus::Int64> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+	    			case DBUS_TYPE_UINT64:
+					{
+					std::vector<DBus::UInt16> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+			    	case DBUS_TYPE_DOUBLE:
+					{
+					std::vector<DBus::Double> array;
+					it.get_array(&array);
+					os << array;				    
+					break;
+					}
+			    	case DBUS_TYPE_STRING:
+					{
+					// MessageIter::get_array/() only works with fixed-length types
+					std::vector<DBus::String> array;
+					std::vector<DBus::String>::iterator ait;
+					it >> array;
+/*					for(ait = array.begin(); ait!=array.end(); ++ait)
+					{
+						os << *ait << ", ";
+					}
+*/					os << array;
+					break;				
+					}
+				default:
+	    				break;
+			}
+			break;
+		case DBUS_TYPE_INVALID:
+       			//FIXME Is a exception needed?
+			throw DBus::ErrorInvalidArgs("Variant: single type expected");
+		default:
+    			//FIXME What could happend to use this switch path?
+			std::cerr << "ostream " << it.type() << std::endl;
+			break;
+	}
 	return os;
 }

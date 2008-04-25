@@ -33,13 +33,23 @@ HalManagerProxy::HalManagerProxy( DBus::Connection& connection )
 			std::map< DBus::String, DBus::Variant >::iterator it_properties;
 			for(it_properties = properties.begin(); it_properties != properties.end(); ++it_properties){
 				std::cout << '\t' << "[" << it_properties->first << "->";
-//				std::cout << it_properties->second;
+				std::cout << it_properties->second;
 				std::cout << "]" << std::endl;
 			}
-
-		} else {
+	 	} else {
 			std::cout << "found device " << udi << std::endl;
 		}
+/*
+		std::cout << "device " << udi << std::endl;
+		std::cout << "device properties: " << std::endl;
+		std::map< DBus::String, DBus::Variant > properties = GetAllProterties(_devices[udi]);
+		std::map< DBus::String, DBus::Variant >::iterator it_properties;
+		for(it_properties = properties.begin(); it_properties != properties.end(); ++it_properties){
+			std::cout << '\t' << "[" << it_properties->first << "->";
+			std::cout << it_properties->second;
+			std::cout << "]" << std::endl;
+		}
+*/		    	     
 	}
 }
 

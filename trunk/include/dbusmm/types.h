@@ -51,6 +51,12 @@ typedef unsigned long long UInt64;
 typedef double Double;
 typedef std::string String;
 
+/*
+ *
+ *  Class DBus::Path
+ *
+ */
+
 struct DMMAPI Path : public std::string
 { 
 	Path() {}
@@ -62,6 +68,12 @@ struct DMMAPI Path : public std::string
 		return *this;
 	}
 };
+
+/*
+ *
+ *  Class DBus::Signature
+ *
+ */
 
 struct DMMAPI Signature : public std::string
 { 
@@ -75,8 +87,20 @@ struct DMMAPI Signature : public std::string
 	}
 };
 
+/*
+ *
+ *  Class DBus::Invalid
+ *
+ */
+
 struct DMMAPI Invalid {};
 
+
+/*
+ *
+ *  Class DBus::Variant
+ *
+ */
 class DMMAPI Variant
 {
 public:
@@ -114,6 +138,12 @@ private:
 
 	Message _msg;
 };
+
+/*
+ *
+ *  Class DBus::Struct
+ *
+ */
 
 template <
 	typename T1,
@@ -198,6 +228,12 @@ struct type< Struct<T1,T2,T3,T4,T5,T6,T7,T8> >
 
 } /* namespace DBus */
 
+
+/*
+ *
+ * 	DBus::MessageIter overloading operator '<<'
+ *
+ */
 inline DBus::MessageIter& operator << ( DBus::MessageIter& iter, const DBus::Invalid& )
 {
 	return iter;
@@ -347,7 +383,11 @@ inline DBus::MessageIter& operator << ( DBus::MessageIter& iter, const DBus::Str
 
 extern DMMAPI DBus::MessageIter& operator << ( DBus::MessageIter& iter, const DBus::Variant& val );
 
+
 /*
+ *
+ *	DBus::MessageIter overloading operator '>>'
+ *
  */
 
 inline DBus::MessageIter& operator >> ( DBus::MessageIter& iter, DBus::Invalid& )
@@ -509,6 +549,52 @@ inline DBus::MessageIter& operator >> ( DBus::MessageIter& iter, DBus::Struct<T1
 }
 
 extern DMMAPI DBus::MessageIter& operator >> ( DBus::MessageIter& iter, DBus::Variant& val );
-	
+
+
+/*
+ *
+ *	std::ostream overloading operator '<<'
+ *
+ */
+
+
+template<typename E>
+inline std::ostream& operator << ( std::ostream& os, const std::vector<E>& val ){
+
+	typename std::vector<E>::const_iterator vit;
+
+	vit = val.begin();
+	if ( vit != val.end() ){
+		os << *vit;
+		++vit;
+	}
+	for(; vit != val.end(); ++vit){
+		std::string separator=", ";
+		os << separator;
+		os << *vit;
+	}
+
+	return os;
+}
+/*
+TODO
+template <
+	typename T1,
+	typename T2,
+	typename T3,
+	typename T4,
+	typename T5,
+	typename T6,
+	typename T7,
+	typename T8
+>
+inline std::ostream& operator << ( std::ostream& os, const DBus::Struct<T1,T2,T3,T4,T5,T6,T7,T8>& val )
+{
+
+	return os;
+}
+*/ 
+extern DMMAPI std::ostream& operator << ( std::ostream& os, const DBus::Variant& val );
+
 #endif//__DBUSMM_TYPES_H
 
