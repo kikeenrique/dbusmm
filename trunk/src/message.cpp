@@ -26,6 +26,8 @@
 
 #include <dbus/dbus.h>
 
+#include <stdlib.h>
+
 #include "internalerror.h"
 #include "message_p.h"
 
@@ -465,6 +467,11 @@ bool Message::is_error() const
 	return type() == DBUS_MESSAGE_TYPE_ERROR;
 }
 
+bool Message::is_method_call( const char* interface, const char* member ) const
+{
+	return dbus_message_is_method_call(_pvt->msg, interface, member);
+}
+
 bool Message::is_signal( const char* interface, const char* member ) const
 {
 	return dbus_message_is_signal(_pvt->msg, interface, member);
@@ -630,6 +637,11 @@ const char* CallMessage::signature() const
 
 /*
 */
+
+ReturnMessage::ReturnMessage( const Message& messee )
+{
+	_pvt = new Private(dbus_message_new_method_return(messee._pvt->msg));
+}
 
 ReturnMessage::ReturnMessage( const CallMessage& callee )
 {

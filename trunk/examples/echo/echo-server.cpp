@@ -4,6 +4,7 @@
 #include <signal.h>
 #include <stdio.h>
 
+#define HOST_NAME_MAX 512
 static const char* ECHO_SERVER_NAME = "org.freedesktop.DBus.Examples.Echo";
 static const char* ECHO_SERVER_PATH = "/org/freedesktop/DBus/Examples/Echo";
 

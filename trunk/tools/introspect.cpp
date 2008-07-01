@@ -24,6 +24,7 @@
 #include <signal.h>
 #include <unistd.h>
 #include <iostream>
+#include <string.h>
 #include "introspect.h"
 
 DBus::BusDispatcher dispatcher;

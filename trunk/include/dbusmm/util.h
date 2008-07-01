@@ -191,6 +191,13 @@ public:
 		return __ptr;
 	}
 
+ 	operator bool () const
+	{
+		if(__cnt.noref()) return 0;
+
+		return __ptr;
+	}
+
 	T* get() const
 	{
 		if(__cnt.noref()) return 0;

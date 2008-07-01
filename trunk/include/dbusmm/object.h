@@ -42,11 +42,7 @@ namespace DBus {
 
 class DMMAPI Object
 {
-protected:
-
-	Object( Connection& conn, const Path& path, const char* service );
-	
-public:
+  public:
 
 	virtual ~Object();
 
@@ -56,13 +52,17 @@ public:
 	
  	inline Connection& conn();
 
-private:
+  protected:
 
+	Object( Connection& conn, const Path& path, const char* service );
 	DMMAPILOCAL virtual bool handle_message( const Message& ) = 0;
+
+  private:
+
 	DMMAPILOCAL virtual void register_obj() = 0;
 	DMMAPILOCAL virtual void unregister_obj() = 0;
 
-private:
+  private:
 
 	Connection	_conn;
 	DBus::Path	_path;
@@ -107,7 +107,7 @@ typedef std::list<ObjectAdaptor*> ObjectAdaptorPList;
 
 class DMMAPI ObjectAdaptor : public Object, public virtual AdaptorBase
 {
-public:
+  public:
 
 	static ObjectAdaptor* from_path( const Path& path );
 
@@ -121,17 +121,17 @@ public:
 
 	inline const ObjectAdaptor* object() const;
 
-protected:
+  protected:
 
 	class DMMAPI Continuation
 	{
-	public:
+	  public:
 
 		inline MessageIter& writer();
 
 		inline Tag* tag();
 
-	private:
+	  private:
 
 		Continuation( Connection& conn, const CallMessage& call, const Tag* tag );
 
@@ -141,7 +141,7 @@ protected:
 		ReturnMessage _return;
 		const Tag* _tag;
 
-	friend class ObjectAdaptor;
+	  friend class ObjectAdaptor;
 	};
 
 	void return_later( const Tag* tag );
@@ -152,11 +152,11 @@ protected:
 
 	Continuation* find_continuation( const Tag* tag );
 
-private:
+	bool handle_message( const Message& );
+
+  private:
 
 	void _emit_signal( SignalMessage& );
-
-	bool handle_message( const Message& );
 
 	void register_obj();
 	void unregister_obj();
@@ -191,7 +191,7 @@ typedef std::list<ObjectProxy*> ObjectProxyPList;
 
 class DMMAPI ObjectProxy : public Object, public virtual ProxyBase
 {
-public:
+  public:
 
 	ObjectProxy( Connection& conn, const Path& path, const char* service = "" );
 
@@ -199,16 +199,18 @@ public:
 
 	inline const ObjectProxy* object() const;
 
-private:
-
-	Message _invoke_method( CallMessage& );
+  protected:
 
 	bool handle_message( const Message& );
+
+  private:
+
+	Message _invoke_method( CallMessage& );
 
 	void register_obj();
 	void unregister_obj();
 
-private:
+  private:
 
 	MessageSlot _filtered;
 };

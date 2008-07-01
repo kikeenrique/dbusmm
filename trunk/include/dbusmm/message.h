@@ -192,6 +192,8 @@ public:
 
 	bool is_error() const;
 
+	bool is_method_call( const char* interface, const char* member ) const;
+	
 	bool is_signal( const char* interface, const char* member ) const;
 
 	MessageIter reader() const;
@@ -301,7 +303,9 @@ public:
 class DMMAPI ReturnMessage : public Message
 {
 public:
-	
+
+	ReturnMessage( const Message& messee );
+
 	ReturnMessage( const CallMessage& callee );
 
 	const char* signature() const;

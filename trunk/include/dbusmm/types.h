@@ -576,6 +576,7 @@ inline std::ostream& operator << ( std::ostream& os, const std::vector<E>& val )
 
 	return os;
 }
+
 /*
 TODO
 template <

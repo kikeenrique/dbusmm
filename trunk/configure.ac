@@ -150,9 +150,13 @@ if test "$enable_glib" = "yes" ; then
 	AC_SUBST(glib_CFLAGS)
 	AC_SUBST(glib_LIBS)
 	AM_CONDITIONAL(ENABLE_GLIB, test 1 = 1)
+	DBUSMM_PKGCONFIG_GLIB_DEP="glib-2.0"
 else
 	AM_CONDITIONAL(ENABLE_GLIB, test 0 = 1)
+	DBUSMM_PKGCONFIG_GLIB_DEP=""
 fi
+AC_SUBST(DBUSMM_PKGCONFIG_GLIB_DEP)
+
 
 #glib examples uses gtkmm to build a gui application. Althought 
 AC_ARG_ENABLE([examples],

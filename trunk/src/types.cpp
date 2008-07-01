@@ -27,6 +27,7 @@
 #include <dbus/dbus.h>
 #include <stdarg.h>
 #include <iostream>
+#include <stdlib.h>
 
 #include "message_p.h"
 #include "internalerror.h"
@@ -207,9 +208,9 @@ std::ostream& operator << ( std::ostream& os, const Variant& val )
 					{
 					// MessageIter::get_array/() only works with fixed-length types
 					std::vector<DBus::String> array;
-					std::vector<DBus::String>::iterator ait;
 					it >> array;
-/*					for(ait = array.begin(); ait!=array.end(); ++ait)
+/*					std::vector<DBus::String>::iterator ait;
+					for(ait = array.begin(); ait!=array.end(); ++ait)
 					{
 						os << *ait << ", ";
 					}
