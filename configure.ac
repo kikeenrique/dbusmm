@@ -1,7 +1,7 @@
 dnl   
 dnl	configure.ac
 dnl   
-dnl	Copyright (C) Enrique García Álvarez 2008 <kike + glkm @ eldemonionegro.com>
+dnl	Copyright (C) Enrique Garcia Alvarez 2008 <kike + glkm @ eldemonionegro.com>
 dnl	Copyright (C) Paolo Durante 	<shackan @ gmail.com>
 dnl
 dnl	configure.ac is free software
@@ -28,15 +28,18 @@ dnl Process this file with autoconf to produce a configure script.
 #		Prelude.
 ################################################################################
 
-AC_PREREQ(2.61)
+AC_PREREQ([2.61])
+
+AC_CONFIG_MACRO_DIRS([m4])
 
 #release versioning
-AC_DEFUN([GENERIC_MAJOR_VERSION], [0])
-AC_DEFUN([GENERIC_MINOR_VERSION], [5])
-AC_DEFUN([GENERIC_MICRO_VERSION], [0])
-AC_DEFUN([GENERIC_VERSION], [GENERIC_MAJOR_VERSION.GENERIC_MINOR_VERSION.GENERIC_MICRO_VERSION])
+GENERIC_MAJOR_VERSION=0
+GENERIC_MINOR_VERSION=5
+GENERIC_MICRO_VERSION=0
+GENERIC_VERSION=$GENERIC_MAJOR_VERSION.$GENERIC_MINOR_VERSION.$GENERIC_MICRO_VERSION
+AC_SUBST(GENERIC_VERSION)
 
-AC_INIT([dbusmm], [GENERIC_VERSION], [shackan@gmail.com])
+AC_INIT([dbusmm],[GENERIC_VERSION],[shackan@gmail.com])
 
 #shared library versioning
 GENERIC_LIBRARY_VERSION=1:0:0
@@ -64,15 +67,16 @@ DBUS_RECURSIVE_MUTEX_VERSION=0.95
 
 # DEPRECATED since autoconf 2.50 
 # AM_INIT_AUTOMAKE([AC_PACKAGE_NAME], [AC_PACKAGE_VERSION])
-AM_INIT_AUTOMAKE([gnu dist-bzip2 -Wall -Werror])
+AM_INIT_AUTOMAKE([gnu dist-bzip2 subdir-objects -Wall -Werror])
 
 AC_CANONICAL_HOST
 AC_SUBST(PACKAGE_VERSION)
 
 AC_PROG_CC
 AC_PROG_CXX
-AC_LANG_CPLUSPLUS
-
+AC_PROG_CPP
+AC_LANG([C++])
+AM_PROG_AR
 
 CXX_FOR_BUILD=${CXX_FOR_BUILD-${CXX}}
 AC_SUBST(CXX_FOR_BUILD)
@@ -140,8 +144,7 @@ PKG_CHECK_EXISTS([dbus-1 >= $DBUS_RECURSIVE_MUTEX_VERSION],
 
 
 AC_ARG_ENABLE([glib],
-	      AC_HELP_STRING([--enable-glib],
-			     [enable glib integration]),
+	      AS_HELP_STRING([--enable-glib],[enable glib integration]),
 	      [enable_glib=$enableval],
 	      [enable_glib=no]
 )
@@ -160,8 +163,7 @@ AC_SUBST(DBUSMM_PKGCONFIG_GLIB_DEP)
 
 #glib examples uses gtkmm to build a gui application. Althought 
 AC_ARG_ENABLE([examples],
-	      AC_HELP_STRING([--enable-examples],
-			     [Building examples explicitly required, but gtkmm-2.4-dev not found (only glib example needs it)]),
+	      AS_HELP_STRING([--enable-examples],[Building examples explicitly required, but gtkmm-2.4-dev not found (only glib example needs it)]),
 	      [enable_examples=$enableval],
 	      [enable_examples=no]
 )
@@ -202,6 +204,9 @@ AM_CONDITIONAL(HAVE_PTHREAD, test "$have_pthread" = "true")
 #		Checks for header files.
 ################################################################################
 
+AC_CHECK_HEADERS([sys/time.h])
+AC_CHECK_HEADER_STDBOOL
+
 
 ################################################################################
 #		Checks for typedefs, structures, and compiler characteristics.
@@ -219,11 +224,13 @@ AM_CONDITIONAL(HAVE_PTHREAD, test "$have_pthread" = "true")
 # like PACKAGE, PACKAGE_VERSION, ...
 AC_CONFIG_HEADERS([config.h dbusmm_config.h])
 
-AM_PROG_LIBTOOL
+AC_C_INLINE
+AC_TYPE_SIZE_T
+
+LT_INIT
 
 AC_ARG_ENABLE([debug],
-	      AC_HELP_STRING([--enable-debug],
-			     [enable debugging support]),
+	      AS_HELP_STRING([--enable-debug],[enable debugging support]),
 	      [enable_debug=$enableval],
 	      [enable_debug=no]
 )
@@ -259,6 +266,11 @@ AC_SUBST(BUILD_LIBDBUSMM_DIR)
 #		Checks for library functions.
 ################################################################################
 
+AC_CHECK_FUNCS([alarm])
+AC_CHECK_FUNCS([gethostname])
+AC_CHECK_FUNCS([gettimeofday])
+AC_CHECK_FUNCS([select])
+AC_CHECK_FUNCS([strchr])
 
 ################################################################################
 #		Output files
