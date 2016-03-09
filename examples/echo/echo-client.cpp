@@ -2,6 +2,7 @@
 #include <iostream>
 #include <pthread.h>
 #include <signal.h>
+#include <stdio.h>
 
 #ifdef HAVE_CONFIG_H
 #include <dbusmm_config.h>
