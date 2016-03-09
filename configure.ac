@@ -205,7 +205,7 @@ AM_CONDITIONAL(HAVE_PTHREAD, test "$have_pthread" = "true")
 ################################################################################
 
 AC_CHECK_HEADERS([sys/time.h])
-AC_CHECK_HEADER_STDBOOL
+#AC_CHECK_HEADER_STDBOOL
 
 
 ################################################################################
