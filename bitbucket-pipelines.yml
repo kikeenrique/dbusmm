@@ -15,7 +15,7 @@ pipelines:
             - apt-get update
             - apt-get -y install libdbus-1-dev libglib2.0-dev libexpat1-dev doxygen graphviz automake
             - automake --version
-            - echo 2 | sudo update-alternatives --config gcc
+#            - echo 2 | sudo update-alternatives --config gcc
             - gcc -v
             - ./autogen.sh --enable-debug-mode
             - ./configure
