@@ -13,7 +13,7 @@ pipelines:
           script:
             - echo "Runs only on the master branch."
             - apt-get update
-            - apt-get -y install libdbus-1-dev libglib2.0-dev libexpat1-dev doxygen graphviz automake
+            - apt-get -y install libdbus-1-dev libglib2.0-dev libexpat1-dev doxygen graphviz automake gcc
             - automake --version
 #            - echo 2 | sudo update-alternatives --config gcc
             - gcc -v
