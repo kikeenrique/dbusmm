@@ -1,0 +1,25 @@
+# You can use a Docker image from Docker Hub or your own container
+# registry for your build environment.
+image: debian
+
+pipelines:
+  default:
+    - step:
+        script:
+          - echo "Runs on branches that don't have specific pipeline."
+  branches: # Container for all branch-specific pipelines.
+    master:
+      - step:
+          script:
+            - echo "Runs only on the master branch."
+            - apt-get update
+            - apt-get install libdbus-1-dev libglib2.0-dev libexpat1-dev doxygen graphviz
+            - automake --version
+            - echo 2 | sudo update-alternatives --config gcc
+            - gcc -v
+            - ./autogen.sh --enable-debug-mode
+            - ./configure
+            - make
+            - make check
+            - apt-get install debhelper cdbs
+            - dpkg-buildpackage -j2 -us -uc -b
